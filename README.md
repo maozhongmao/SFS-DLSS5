@@ -4,18 +4,18 @@
 
 ## 组成
 
-- **SFSDLSS5**（本仓库）：SFS code mod —— 游戏内控制面板（`F9`），提供后端状态检测、一键暂停/恢复 DLSS 5、运行日志查看
+- **SFSDLSS5**（本仓库 `src/`）：SFS code mod —— 游戏内控制面板（`F9`），提供后端状态检测、一键暂停/恢复 DLSS 5、运行日志查看
 - **渲染后端**（不随本仓库分发）：DLSS 5 的注入与神经渲染由社区工具链在游戏目录中安装（ReShade + 社区 add-on + NVIDIA 运行时组件），各组件遵循其自身许可
 
 ## 使用前提
 
 - Spaceflight Simulator **1.6.x**（PC / Steam）
-- NVIDIA RTX 显卡（DLSS 5 神经渲染的可用性与驱动要求以 NVIDIA 官方为准）
+- NVIDIA RTX 显卡（可用性与驱动要求以 NVIDIA 官方为准）
 - 后端由第三方工具安装；本仓库不含任何 NVIDIA 或第三方二进制文件
 
 ## 构建
 
-1. 从 SFS 安装目录复制引用文件到 `Lib\`：
+1. 从 SFS 安装目录复制引用文件到 `src\Lib\`：
 
    ```
    Spaceflight Simulator_Data\Managed\
@@ -26,8 +26,8 @@
      └ UniTask.dll
    ```
 
-2. `dotnet build -c Release`
-3. 把 `bin/Release/SFSDLSS5.dll` 放到：
+2. 在 `src\` 目录运行 `dotnet build -c Release`
+3. 把 `src\bin\Release\SFSDLSS5.dll` 放到：
 
    ```
    Spaceflight Simulator Game\Mods\SFSDLSS5\SFSDLSS5.dll
@@ -38,6 +38,10 @@
 - 游戏内按 **F9** 打开控制面板
 - **Pause / Resume DLSS 5**：一键暂停/恢复神经渲染（写入后端配置）
 - 面板底部实时显示后端日志
+
+## 发布
+
+编译好的模组放在 [Releases](https://github.com/maozhongmao/SFS-DLSS5/releases)，仓库文件树内不含二进制产物。
 
 ## 许可
 
