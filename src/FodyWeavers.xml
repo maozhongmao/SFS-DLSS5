@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Weavers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="FodyWeavers.xsd">
+  <Costura>
+    <!-- 游戏/Unity 程序集保持外部引用，不做内嵌 -->
+    <ExcludeAssemblies>
+      Assembly-CSharp
+      0Harmony
+      UnityEngine
+      UnityEngine.CoreModule
+      UnityEngine.UI
+      UnityEngine.UIModule
+      UnityEngine.InputLegacyModule
+      UnityEngine.TextRenderingModule
+      UnityEngine.IMGUIModule
+      Newtonsoft.Json
+      UniTask
+    </ExcludeAssemblies>
+    <CreateTemporaryAssemblies>false</CreateTemporaryAssemblies>
+    <LoadAtModuleInit>true</LoadAtModuleInit>
+  </Costura>
+</Weavers>

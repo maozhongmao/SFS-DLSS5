@@ -28,7 +28,7 @@ namespace SFSDLSS5
 
         public override string MinimumGameVersionNecessary => "1.6.0.0";
 
-        public override string ModVersion => "0.0.1";
+        public override string ModVersion => "0.0.3";
 
         public override string Description =>
             "DLSS 5 neural rendering integration for SFS. Manages the injection backend and provides in-game status and controls.";
